@@ -1,2 +1,2 @@
-# Currency Converter - React-native-app with typescript.
+# Currency Converter - React-native-app
 .
