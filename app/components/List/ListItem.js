@@ -2,4 +2,4 @@
 
 const ListItem = () => null;
 
-export default Separator;
+export default ListItem;

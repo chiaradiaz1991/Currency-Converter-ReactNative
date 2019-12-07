@@ -1,15 +1,15 @@
 import React from 'react';
-import { View, Text, FlatList, StatusBar } from 'react-native';
+import { View, FlatList, StatusBar } from 'react-native';
 import currencies from '../data/currencies';
 
-import { ListItem } from '../components/List/ListItem';
+import { ListItem } from '../components/List';
 
 const CurrencyList = () => (
     <View style={{flex:1}}>
         <StatusBar barStyle="default" translucent={false} />
         <FlatList
             data={currencies}
-            renderItem={({ item }) => <Text>{item}</Text>}
+            renderItem={({ item }) => <ListItem />}
             keyExtractor= {item => item}
         />
     </View>
