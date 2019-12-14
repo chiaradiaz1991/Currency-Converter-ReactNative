@@ -3,8 +3,8 @@
   "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerNgrokUrl": "https://dm-45n.anonymous.react-native-app.exp.direct",
+  "packagerNgrokUrl": "https://packager.dm-45n.anonymous.react-native-app.exp.direct",
+  "ngrokPid": 9004,
   "webpackServerPort": null
 }
