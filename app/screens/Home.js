@@ -5,6 +5,7 @@ import { Logo } from '../components/Logo';
 import InputWithButton from '../components/TextInput/InputWithButton';
 import { ClearButton } from '../components/Button';
 import { LastConverted } from '../components/Text';
+import { Header } from '../components/Header';
 
 const TEMP_BASE_CURRENCY = 'USD';
 const TEMP_QUOTE_CURRENCY = 'GBP';
@@ -20,21 +21,30 @@ class Home extends Component {
 
   handlePressBaseCurrency = () => {
     console.log('press base currency');
+    this.props.navigation.navigate('CurrencyList', { title: 'Base Currency'})
   };
 
   handlePressQuoteCurrency = () => {
     console.log('press quote currency');
+    this.props.navigation.navigate('CurrencyList', { title: 'Base Quote Currency'})
   };
 
   handleClearButton = () => {
     console.log('clear currency');
   };
 
+  handleOptionsPress = () => {
+    console.log('options press');
+    this.props.navigation.navigate('Options')
+  };
+
+
 
   render() {
     return (
       <Container>
         <StatusBar backgroundColor="blue" barStyle="light-content" />
+        <Header onPress={this.handleOptionsPress} />
         <Logo />
         <InputWithButton
           buttonText={TEMP_BASE_CURRENCY}
