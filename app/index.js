@@ -1,8 +1,6 @@
 import React from 'react';
-import CurrencyList from './screens/CurrencyList';
 import EStylesheet from 'react-native-extended-stylesheet';
-
-
+import Options from './screens/Options';
 
 
 EStylesheet.build ({
@@ -15,5 +13,5 @@ EStylesheet.build ({
     
 })
 
-export default () => <CurrencyList />
+export default () => <Options />
 
