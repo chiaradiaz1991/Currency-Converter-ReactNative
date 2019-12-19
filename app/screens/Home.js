@@ -6,6 +6,8 @@ import InputWithButton from '../components/TextInput/InputWithButton';
 import { ClearButton } from '../components/Button';
 import { LastConverted } from '../components/Text';
 import { Header } from '../components/Header';
+import { swapCurrency, changeCurrencyAmount } from '../actions/currencies';
+import { connect } from 'react-redux';
 
 const TEMP_BASE_CURRENCY = 'USD';
 const TEMP_QUOTE_CURRENCY = 'GBP';
@@ -15,8 +17,9 @@ const TEMP_LAST_CONVERTED = new Date();
 const TEMP_CONVERSION_RATE = 0.79739;
 
 class Home extends Component {
-  handleChangeText = () => {
-    console.log('change text');
+
+  handleChangeText = (amount) => {
+    this.props.dispatch(changeCurrencyAmount(amount));
   };
 
   handlePressBaseCurrency = () => {
@@ -29,8 +32,8 @@ class Home extends Component {
     this.props.navigation.navigate('CurrencyList', { title: 'Base Quote Currency'})
   };
 
-  handleClearButton = () => {
-    console.log('clear currency');
+  handleSwapCurrency = () => {
+    this.props.dispatch(swapCurrency());
   };
 
   handleOptionsPress = () => {
@@ -61,7 +64,7 @@ class Home extends Component {
         />
         <ClearButton
             text="Reverse Currencies"
-            onPress={this.handleClearButton}
+            onPress={this.handleSwapCurrency}
         />
         <LastConverted
           date={TEMP_LAST_CONVERTED}
@@ -74,4 +77,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default connect()(Home);
